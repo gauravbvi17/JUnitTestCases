@@ -32,7 +32,6 @@ import org.mockito.Mockito
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
-//https://stackoverflow.com/questions/39229458/testing-toolbar-title-text-with-espresso-android
 @RunWith(JUnit4::class)
 class FragmentRandomUserListTest{
 
