@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.action.ViewActions.click
@@ -67,8 +68,6 @@ class FragmentRandomUserListTest{
 
         onView(withId(R.id.recycler_view_users)).check(matches(isDisplayed()))
        //check view is exist
-
-
         //whether particular opetion is clickable or not
         Handler(Looper.getMainLooper()).postDelayed( Runnable {
        //
@@ -101,8 +100,6 @@ class FragmentRandomUserListTest{
             //detail fragment view load or not
             onView(withId(R.id.rootConstraint)).check(matches(isDisplayed()))
 
-
-
             //detail view first position gender check
          //   onView(withId(R.id.txtGender)).check(matches(withText("aaaaa")))
 
@@ -121,23 +118,31 @@ class FragmentRandomUserListTest{
     }
 
 
-  /*  @Test
-    fun detailFragment()
-    {
-        val mockNavController = Mockito.mock(NavController::class.java)
+    @RunWith(JUnit4::class)
+    class FragmentUserDetailTest{
 
-        // Create a graphical FragmentScenario for the TitleScreen
+        @Test
+        fun detailFragment()
+        {
+            val mockNavController = Mockito.mock(NavController::class.java)
 
-        val detailScenario = launchFragmentInContainer<FragmentUserDetail>()
+            // Create a graphical FragmentScenario for the TitleScreen
 
-        // Set the NavController property on the fragment
-        detailScenario.onFragment { fragment ->
-            mockNavController.setGraph(R.navigation.main_nav_graph)
-            Navigation.setViewNavController(fragment.requireView(), mockNavController)
+            val detailScenario = launchFragmentInContainer<FragmentUserDetail>()
 
+            // Set the NavController property on the fragment
+            detailScenario.onFragment { fragment ->
+                mockNavController.setGraph(R.navigation.main_nav_graph)
+                Navigation.setViewNavController(fragment.requireView(), mockNavController)
+                //   Mockito.`when`(fragment.arguments?.containsKey("myUser")).thenReturn(true)
+            }
+
+
+            assert( true, { mockNavController.currentDestination?.id == R.id.fragmentUserDetail })
+            onView(withId(R.id.rootConstraint)).check(matches(isDisplayed()))
+            Espresso.pressBack()
         }
-        assert( true, { mockNavController.currentDestination?.id == R.id.fragmentUserDetail })
-        onView(withId(R.id.rootConstraint)).check(matches(isDisplayed()))
-    }*/
+    }
 
 }
+
