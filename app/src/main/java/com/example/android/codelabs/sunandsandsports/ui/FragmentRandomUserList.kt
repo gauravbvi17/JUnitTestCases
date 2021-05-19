@@ -84,7 +84,7 @@ open class FragmentRandomUserList : Fragment(), ItemClickListener {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (context as? MainActivity)?.changeToolbar("",true)
+     //  (context as? MainActivity)?.changeToolbar("",true)
     }
 
 

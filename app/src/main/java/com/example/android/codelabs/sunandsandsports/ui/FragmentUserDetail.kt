@@ -37,7 +37,7 @@ class FragmentUserDetail : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (context as? MainActivity)?.changeToolbar("",false)
+    //    (context as? MainActivity)?.changeToolbar("",false)
     }
 
     private fun initializeViews() {
