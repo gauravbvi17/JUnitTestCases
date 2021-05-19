@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/fragmentRandomUserList">
+
+    <fragment
+        android:id="@+id/fragmentRandomUserList"
+        android:name="com.example.android.codelabs.sunandsandsports.ui.FragmentRandomUserList"
+        android:label="fragment_random_user_list"
+        tools:layout="@layout/fragment_random_user_list" >
+        <action
+            android:id="@+id/action_fragmentRandomUserList_to_fragmentUserDetail"
+            app:destination="@id/fragmentUserDetail"
+            app:enterAnim="@anim/pull_in_right"
+            app:exitAnim="@anim/push_out_left"
+            app:popEnterAnim="@anim/pull_in_left"
+            app:popExitAnim="@anim/push_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentUserDetail"
+        android:name="com.example.android.codelabs.sunandsandsports.ui.FragmentUserDetail"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail" >
+      <!--  <argument
+            android:name="myUser"
+            app:argType="com.example.android.codelabs.sunandsandsports.model.UserResult"
+            />-->
+    </fragment>
+</navigation>
